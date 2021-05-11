@@ -19,7 +19,7 @@ My Name is
 ## View my social:
 
   
-[<img src="https://github.com/alexcapstick/alexcapstick/blob/main/pictures/github_button.png" width="200"/>](https://github.com/alexcapstick)  [<img src="https://github.com/alexcapstick/alexcapstick/blob/main/pictures/twitter_button.png" width="200"/>](https://twitter.com/alex_capstick_) [<img src="https://github.com/alexcapstick/alexcapstick/blob/main/pictures/linkedin_button.png" width="200"/>](https://www.linkedin.com/in/alexander-capstick/) [<img src="https://github.com/alexcapstick/alexcapstick/blob/main/pictures/email_button.png" width="200"/>](mailto:alexander.capstick.19@imerial.ac.uk) 
+[<img src="/pictures/github_button.png" width="200"/>](https://github.com/alexcapstick)  [<img src="/pictures/twitter_button.png" width="200"/>](https://twitter.com/alex_capstick_) [<img src="/pictures/linkedin_button.png" width="200"/>](https://www.linkedin.com/in/alexander-capstick/) [<img src="/pictures/email_button.png" width="200"/>](mailto:alexander.capstick.19@imerial.ac.uk) 
 
 
 ## My academic achievements are:
