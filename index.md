@@ -5,7 +5,7 @@
 
 
 
-# Hi, I am Alex Capstick
+# Hi, my name is Alex Capstick
 
 
 ## I am:
