@@ -1,6 +1,7 @@
 
-<img src="/pictures/IMG_6241_cropped.jpg" width="400" >
-
+<p align="center">
+<img src="/pictures/IMG_6241_cropped.jpg" width="400">
+</p>
 
 My Name is
 
