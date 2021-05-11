@@ -1,6 +1,6 @@
 
 
-<img src="https://github.com/alexcapstick/alexcapstick/blob/main/pictures/IMG_6241_cropped.jpg" width="400" >
+<img src="./pictures/IMG_6241_cropped.jpg" width="400" >
 
 
 My Name is
