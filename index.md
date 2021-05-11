@@ -1,37 +1,25 @@
-## Welcome to GitHub Pages
+My Name is
 
-You can use the [editor on GitHub](https://github.com/alexcapstick/alexcapstick/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+# Alex Capstick
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+<img src="https://github.com/alexcapstick/alexcapstick/blob/gh-pages/pictures/IMG_6241_cropped.jpg" width="400" >
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+I am:
 
-```markdown
-Syntax highlighted code block
+- A mathematician interested in the overlap between Machine Learning and Healthcare.
+- Currently studying towards a PhD at Imperial College London
+- A big Formula 1 fan and a tech enthusiast!
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
+View my social:
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
-```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
+My academic achievements are:
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/alexcapstick/alexcapstick/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+- BSc Mathematics at University College London
+- MSc Applied Mathematics at Imperial College London
+- PhD at Imperial College London [in progress]. I am working within the overlap between Machine Learning and Dementia Research
