@@ -3,7 +3,7 @@ My Name is
 # Alex Capstick
 
 
-<img src="https://github.com/alexcapstick/alexcapstick/blob/gh-pages/pictures/IMG_6241_cropped.jpg" width="400" >
+<img src="https://github.com/alexcapstick/alexcapstick/blob/main/pictures/IMG_6241_cropped.jpg" width="400" >
 
 I am:
 
