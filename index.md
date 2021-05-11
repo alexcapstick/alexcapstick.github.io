@@ -1,4 +1,4 @@
-<p align="center">
+
 
 <img src="https://github.com/alexcapstick/alexcapstick/blob/main/IMG_6241_cropped.jpg" width="400" >
 
@@ -28,5 +28,3 @@ My Name is
 - MSc Applied Mathematics at Imperial College London
 - PhD at Imperial College London [in progress]. I am working within the overlap between Machine Learning and Dementia Research
 
-
-</p>
