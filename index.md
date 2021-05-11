@@ -4,12 +4,8 @@
 </p>
 
 
-My Name is
 
-
-
-# Alex Capstick
-
+# Hi, I am Alex Capstick
 
 
 ## I am:
