@@ -1,6 +1,6 @@
 
 
-<img src="./pictures/IMG_6241_cropped.jpg" width="400" >
+<img src="/pictures/IMG_6241_cropped.jpg" width="400" >
 
 
 My Name is
