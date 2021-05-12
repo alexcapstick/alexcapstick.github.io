@@ -10,7 +10,7 @@
 
 ## I am:
 
-- A mathematician interested in the overlap between Machine Learning and Healthcare.
+- A mathematician interested in the overlap between Machine Learning and Healthcare
 - Currently studying towards a PhD at Imperial College London
 - A big Formula 1 fan and a tech enthusiast!
 
