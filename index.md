@@ -10,8 +10,8 @@
 
 ## I am:
 
-- A mathematician interested in the overlap between Machine Learning and Healthcare
-- Currently studying towards a PhD at Imperial College London
+- A mathematician interested in the overlap between Machine Learning and Healthcare.
+- Currently studying towards a PhD at Imperial College London.
 - A big Formula 1 fan and a tech enthusiast!
 
 
@@ -23,7 +23,7 @@
 
 ## My academic achievements are:
 
-- BSc Mathematics at University College London
-- MSc Applied Mathematics at Imperial College London
-- PhD at Imperial College London [in progress]. I am working within the overlap between Machine Learning and Dementia Research
+- BSc Mathematics at University College London.
+- MSc Applied Mathematics at Imperial College London.
+- PhD at Imperial College London [in progress]. I am working within the overlap between Machine Learning and Dementia Research.
 
