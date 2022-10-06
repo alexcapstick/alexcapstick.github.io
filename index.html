@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alexander Capstick</title>
+
+  <!--
+    - favicon
+    
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo-alex.ico" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!--
+    - #MAIN
+  -->
+
+  <main>
+
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box" >
+          <img src="./assets/images/my-picture.jpg" style="border-radius: 10%" alt="Alex Capstick" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Alex Capstick">Alex Capstick</h1>
+          <!--
+            - #TODO: fix the inline display when displaying the buttons, since they over run.
+            I was thinking using list items instead, which should be more dynamic.
+          -->
+          <ul class="tags-list"> 
+            <li class="tags-item">
+              <div class="title"  >PhD Student</div>
+            </li>
+            <li class="tags-item">
+              <div class="title"  >Mathematics</div>
+            </li>
+            <li class="tags-item">
+              <div class="title" >Machine Learning</div>
+            </li>
+            <li class="tags-item">
+              <div class="title" >Healthcare</div>
+            </li>
+          </ul>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+
+          <!--
+            - #TODO: This email is too long and goes under the other
+          -->
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:alexander.capstick19@imperial.ac.uk" class="contact-link">alexander.capstick19@imperial.ac.uk</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Twitter</p>
+
+              <a href="https://twitter.com/alex_capstick_" class="contact-link">@alex_capstick_</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">LinkedIn</p>
+
+              <a href="https://www.linkedin.com/in/alexander-capstick/" class="contact-link">Alex Capstick</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="logo-github"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">GitHub</p>
+
+              <a href="https://github.com/alexcapstick" class="contact-link">alexcapstick</a>
+            </div>
+
+            <li class="contact-item">
+
+              <div class="icon-box">
+                <ion-icon name="school-outline"></ion-icon>
+              </div>
+  
+              <div class="contact-info">
+                <p class="contact-title">University</p>
+  
+                <address>Imperial College London</address>
+              </div>
+  
+            </li>
+
+          <!--
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+
+              <address>London, United Kingdom</address>
+            </div>
+          -->
+
+          </li>
+
+
+
+
+        </ul>
+
+        
+        <div class="separator"></div>
+
+          <!--
+
+          <ul class="social-list">
+
+            <li class="social-item">
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+  
+            <li class="social-item">
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+  
+            <li class="social-item">
+              <a href="#" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+  
+          </ul>
+          -->
+
+      </div>
+
+    </aside>
+
+
+
+
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>About</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>CV</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Publications</button>
+          </li>
+
+          
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Projects</button>
+          </li>      
+          
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contact</button>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about  active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+            My name is Alex and I am a PhD student at Imperial College London. My project is focused on using
+            machine learning techniques for the extraction of clinical insights from in-home monitoring data. Within healthcare 
+            my research is focused on people living with Dementia.
+          </p>
+
+          <p>
+            My interests lie in theoretical machine learning and building new techniques that are applicable to the world 
+            of healthcare. This has so far involved researching meta-continual learning, anomaly detection, feature engineering, and 
+            designing optimisation methods that allow for predictive models to learn from multiple data sources with different 
+            levels of data quality. Until now, my work has focused on applying these techniques to the analysis of in-home
+            monitoring data to predict urinary tract infections and to learn participant behaviours.
+          </p>
+        </section>
+
+
+        <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 service-title">My Interests and Skills</h3>
+
+          <ul class="service-list">
+
+
+
+
+
+
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-design.svg
+                " alt="design icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Continual Learning</h4>
+
+                <p class="service-item-text">
+                  Within the continual learning paradigm, models are designed 
+                  to adapt their knowledge in an evolving environment.
+                </p>
+              </div>
+
+            </li>
+
+
+
+            <!--
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                
+                <img src="./assets/images/icon-design.svg
+                " alt="design icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Continual Learning</h4>
+
+                <p class="service-item-text">
+                  Within the continual learning paradigm, models are designed 
+                  to adapt their knowledge in an evolving environment.
+                </p>
+              </div>
+
+            </li>
+            -->
+
+
+
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-design.svg
+                " alt="design icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Meta Learning</h4>
+
+                <p class="service-item-text">
+                  Learning to learn. This involves optimising models
+                  to be able to learn in new situations reliably.
+                </p>
+              </div>
+
+            </li>
+
+
+
+
+            <!--
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Few-shot Learning</h4>
+
+                <p class="service-item-text">
+                  Learning from training data that contains few examples.
+                </p>
+              </div>
+
+            </li>
+          -->
+
+
+
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-design.svg
+                " alt="design icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Machine learning for Dementia Care</h4>
+
+                <p class="service-item-text">
+                  Designing explainable models for the extraction 
+                  of clinical insights from in-home monitoring data.
+                </p>
+              </div>
+
+            </li>
+
+
+
+
+
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-design.svg
+                " alt="design icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Learning From Noisy Data</h4>
+
+                <p class="service-item-text">
+                  Building models that are robust to noise in the training data.
+                </p>
+              </div>
+
+            </li>
+
+
+            <!--
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-photo.svg" alt="camera icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Photography</h4>
+
+                <p class="service-item-text">
+                  I make high-quality photos of any category at a professional level.
+                </p>
+              </div>
+            </li>
+            -->
+
+
+
+
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-design.svg
+                " alt="design icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Mathematics</h4>
+
+                <p class="service-item-text">
+                  I have a general interest in all things maths! Within
+                  my BSc and MSc I covered a variety
+                  of applied and theoretical topics.
+                </p>
+              </div>
+
+            </li>
+
+
+
+
+
+
+
+
+        <li class="service-item">
+          <div class="service-icon-box">
+            <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+          </div>
+          <div class="service-content-box">
+            <h4 class="h4 service-item-title">Python, R, SQL, HTML, VBA</h4>
+            <p class="service-item-text">
+              I have experience in the above languages, with my experience ranked in 
+              the corresponding order.
+            </p>
+          </div>
+        </li>
+
+
+
+
+      </ul>
+
+    </section>
+
+
+
+        <!--
+          - testimonials
+        -->
+        <!--
+        <section class="testimonials">
+
+          <h3 class="h3 testimonials-title">Testimonials</h3>
+
+          <ul class="testimonials-list has-scrollbar">
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Daniel lewis</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                    lot of experience
+                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
+                    consectetur adipiscing
+                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Jessica miller</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                    lot of experience
+                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
+                    consectetur adipiscing
+                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-3.png" alt="Emily evans" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Emily evans</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                    lot of experience
+                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
+                    consectetur adipiscing
+                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-4.png" alt="Henry william" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Henry william</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                    lot of experience
+                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
+                    consectetur adipiscing
+                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </section>
+        -->
+
+        <!--
+          - testimonials modal
+        -->
+        
+
+
+        <!--
+        <div class="modal-container" data-modal-container>
+          
+          <div class="overlay" data-overlay></div>
+
+            <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+          
+          <section class="testimonials-modal">
+            
+            <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+            
+            <div class="modal-img-wrapper">
+              <figure class="modal-avatar-box">
+                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
+              </figure>
+
+              <img src="./assets/images/icon-quote.svg" alt="quote icon">
+            </div>
+
+            <div class="modal-content">
+
+              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
+
+              <time datetime="2021-06-14">14 June, 2021</time>
+
+              <div data-modal-text>
+                <p>
+                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                  lot of experience
+                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
+                  consectetur adipiscing
+                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                </p>
+              </div>
+            
+            </div>
+            
+          </section>
+          
+
+        </div>
+        -->
+
+
+        <!--
+          - clients
+        -->
+        <!--
+        
+        <section class="clients">
+
+          <h3 class="h3 clients-title">Clients</h3>
+
+          <ul class="clients-list has-scrollbar">
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/logo-1-color.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/logo-2-color.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/logo-3-color.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/logo-4-color.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/logo-5-color.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/logo-6-color.png" alt="client logo">
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+        -->
+
+      </article>
+
+      
+
+      <div class="modal-container" data-modal-container>
+          
+        <div class="overlay" data-overlay></div>
+
+          <button class="modal-close-btn" data-modal-close-btn>
+            <!--
+            <ion-icon name="close-outline"></ion-icon>
+            -->
+          </button>
+
+        </div>
+      
+
+      <!--
+        - #CV
+      -->
+
+      <article class="cv" data-page="cv">
+
+        <header>
+          <h2 class="h2 article-title">CV</h2>
+        </header>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Higher Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Imperial College London, 2021 — 2025</h4>
+              <span>PhD, Machine learning applied to healthcare.</span>
+              <p class="timeline-text">
+                Studying the use of machine learning techniques to improve Dementia care through the use
+                of in-home sensors.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Imperial College London, 2019 — 2020</h4>
+              <span>MSc, Applied Mathematics</span>
+              <p class="timeline-text">
+                Machine Learning, Data Science, Computational Mathematics, Dynamic Systems,
+                Asymptotic Analysis, General Relativity, Vortex Dynamics, Applied Complex Analysis
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">University College London, 2016 — 2019</h4>
+              <span>BSc, Mathematics</span>
+              <p class="timeline-text">
+                Numerical Methods, Probability, Statistics, Mathematical Methods,
+                Financial Mathematics, Algebra, Partial Differential Equations
+                General Relativity, Measure Theory, Complex Analysis, Real Analysis, 
+                Fluid Mechanics
+              </p>
+            </li>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Experience</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Investec, London, 2019 — 2020</h4>
+              <span>Data and Analytics Graduate</span>
+              <p class="timeline-text">
+                Working as part of the data and analytics graduate program, gaining experience
+                in the data science, analytics, and risk management teams.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Investec, London, 2019 — 2019</h4>
+              <span>Data and Analytics Summer Intern</span>
+              <p class="timeline-text">
+                Working as part of the data and analytics summer internship program, gaining experience
+                in the data science and analytics teams.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Green Chimneys Summer Camp, New York, 2018 — 2018</h4>
+              <span>Science Teacher</span>
+              <p class="timeline-text">
+                Teaching science through demonstrations and experiments.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">JP Morgan, London, 2018 — 2018</h4>
+              <span>Spring Intern</span>
+              <p class="timeline-text">
+                Spring intern focusing in the sales teams.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Homewood School, Kent, 2015 — 2016</h4>
+              <span>Mathematics Teacher</span>
+              <p class="timeline-text">
+                GCSE and A Level teacher of Mathematics
+              </p>
+            </li>
+
+          </ol>
+
+        </section>
+        <!--
+        <section class="skill">
+
+          <h3 class="h3 skills-title">My skills</h3>
+
+          <ul class="skills-list content-card">
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Web design</h5>
+                <data value="80">80%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 80%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Graphic design</h5>
+                <data value="70">70%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 70%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Branding</h5>
+                <data value="90">90%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 90%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">WordPress</h5>
+                <data value="50">50%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 50%;"></div>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section>
+        -->
+      </article>
+
+
+
+
+
+      <!--
+        - #PORTFOLIO
+      -->
+
+      <article class="publications" data-page="publications">
+
+        <header>
+          <h2 class="h2 article-title">Publications</h2>
+        </header>
+        
+        <section class="projects">
+
+          <ul class="filter-list">
+            <!--
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Web design</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Applications</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Web development</button>
+            </li>
+            -->
+          </ul>
+
+          <div class="filter-select-box">
+
+            <button class="filter-select" data-select>
+
+              <div class="select-value" data-selecct-value>Select category</div>
+
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+
+            </button>
+
+            <ul class="select-list">
+              <!--
+              <li class="select-item">
+                <button data-select-item>All</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Web design</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Applications</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Web development</button>
+              </li>
+              -->
+            </ul>
+
+          </div>
+
+          <ul class="project-list">
+            <!--
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Finance</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-2.png" alt="orizon" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Orizon</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web design">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Fundo</h3>
+
+                <p class="project-category">Web design</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="applications">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Brawlhalla</h3>
+
+                <p class="project-category">Applications</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web design">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-5.png" alt="dsm." loading="lazy">
+                </figure>
+
+                <h3 class="project-title">DSM.</h3>
+
+                <p class="project-category">Web design</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web design">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-6.png" alt="metaspark" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">MetaSpark</h3>
+
+                <p class="project-category">Web design</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-7.png" alt="summary" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Summary</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="applications">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-8.jpg" alt="task manager" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Task Manager</h3>
+
+                <p class="project-category">Applications</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-9.png" alt="arrival" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Arrival</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+
+          </ul>
+          -->
+
+        </section>
+      </article>
+
+
+
+
+
+      <!--
+        - #Projects
+      -->
+      
+      <article class="projects" data-page="projects">
+
+        <header>
+          <h2 class="h2 article-title">Projects</h2>
+        </header>
+
+        <section class="blog-posts">
+
+          <ul class="blog-posts-list">
+
+
+            <li class="blog-post-item">
+              <a href="https://alexcapstick-aml.readthedocs.io/en/latest/">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/aml.png" alt="AML Read the Docs" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Python</p>
+
+                    <span class="dot"></span>
+
+                  </div>
+
+                  <h3 class="h3 blog-item-title">AML Python Package</h3>
+
+                  <p class="blog-text">
+                    Alex's Machine Learning package, with some helpful code.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+
+
+            <li class="blog-post-item">
+              <a href="https://alexs-visualisation-tools.readthedocs.io/en/latest/">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/avt.png" alt="AVT Read the Docs" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Python</p>
+
+                    <span class="dot"></span>
+
+                  </div>
+
+                  <h3 class="h3 blog-item-title">AVT Python Package</h3>
+
+                  <p class="blog-text">
+                    Alex's visualisation tools contains some useful plotting functions, 
+                    inspired by seaborn's API.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+
+
+            <li class="blog-post-item">
+              <a href="https://skutils.readthedocs.io/en/latest/">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/sku.png" alt="SKU Read the Docs" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Python</p>
+
+                    <span class="dot"></span>
+
+                  </div>
+
+                  <h3 class="h3 blog-item-title">SKU Python Package</h3>
+
+                  <p class="blog-text">
+                    Alex's Sci-kit Learn Utils add extra functionality to pipelines,
+                    and allow for more complex machine learning training and testing.
+                    It also includes some extra functionality for hyper-parameter 
+                    optimisation.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+
+
+            <li class="blog-post-item">
+              <a href="https://dcarte-transform.readthedocs.io/en/latest/">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/DCT.png" alt="Dcarte-Transform Read the Docs" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Python</p>
+
+                    <span class="dot"></span>
+
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Dcarte-Transform Python Package</h3>
+
+                  <p class="blog-text">
+                    Alex's Dcarte-Transform package adds extra functionality to dcarte, an in-house
+                    python package designed for loading the UK DRI Minder data.
+                    Specifically Dcarte-Transform adds extra abilities
+                    for machine learning research. It also includes a feature engineering 
+                    recipe for easy access to engineered features.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+      
+      <!--
+        - #CONTACT
+      -->
+
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3535544.767114379!2d-6.729906278530523!3d54.426101536300166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876110149812b73%3A0x6048621cfb84b49e!2sImperial%20College%20London%20White%20City%20Campus!5e0!3m2!1sen!2suk!4v1655638185068!5m2!1sen!2suk"
+              width="400" height="300" loading="lazy"></iframe>
+          </figure>
+        </section>
+
+        <!--
+        <section class="contact-form">
+
+          <h3 class="h3 form-title">Contact Form</h3>
+
+          <form action="#" class="form" data-form>
+
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+            </div>
+
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+
+            <button class="form-btn" type="submit" disabled data-form-btn>
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+
+          </form>
+
+        </section>
+        -->
+
+        <section class="contact-text">
+          <p>
+            To get in contact with me, please use one of the following channels:
+          </p>
+
+
+          <ul class="contacts-list">
+
+            <li class="contact-item">
+  
+              <div class="icon-box">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+  
+  
+            <!--
+              - #TODO: This email is too long and goes under the other
+            -->
+              <div class="contact-info">
+                <a href="mailto:alexander.capstick19@imperial.ac.uk" class="contact-link">alexander.capstick19@imperial.ac.uk</a>
+              </div>
+  
+            </li>
+  
+            <li class="contact-item">
+  
+              <div class="icon-box">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </div>
+  
+              <div class="contact-info">
+                <a href="https://twitter.com/alex_capstick_" class="contact-link">@alex_capstick_</a>
+              </div>
+  
+            </li>
+  
+            <li class="contact-item">
+  
+              <div class="icon-box">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </div>
+  
+              <div class="contact-info">
+                <a href="https://www.linkedin.com/in/alexander-capstick/" class="contact-link">Alex Capstick</a>
+              </div>
+  
+            </li>
+  
+            <li class="contact-item">
+  
+              <div class="icon-box">
+                <ion-icon name="logo-github"></ion-icon>
+              </div>
+  
+              <div class="contact-info">
+                <a href="https://github.com/alexcapstick" class="contact-link">alexcapstick</a>
+              </div>
+  
+  
+            <!--
+            <li class="contact-item">
+  
+              <div class="icon-box">
+                <ion-icon name="location-outline"></ion-icon>
+              </div>
+  
+              <div class="contact-info">
+                <p class="contact-title">Location</p>
+  
+                <address>London, United Kingdom</address>
+              </div>
+            -->
+  
+            </li>
+  
+          </ul>
+
+        </section>
+
+      </article>
+
+    </div>
+
+
+
+  </main>
+
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+
+</html>
