@@ -415,7 +415,7 @@ main {
 .contacts-list {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 5px;
+  gap: 3px;
 }
 
 
