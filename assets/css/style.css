@@ -64,6 +64,7 @@
   /* solid */
 
   --dark-purpley-blue: hsl(212, 92%, 45%);
+  --accent-text: hsl(212, 92%, 45%);
   --purpley-blue: hsl(220, 86%, 78%);
   --eerie-black-1: hsl(240, 2%, 13%);
   --slight-blue-white: hsl(220, 86%, 78%);
@@ -117,6 +118,28 @@
 
 }
 
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --white-background: hsl(240, 2%, 13%);
+    --slight-blue-white: hsl(215, 61%, 27%);
+    --light-gray: hsl(0, 0%, 100%);
+    --light-gray-70: hsl(0, 0%, 100%);
+    --eerie-black-1: hsl(0, 0%, 100%);
+    --accent-text: hsl(211, 65%, 66%);
+    }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --white-background: hsl(209, 100%, 92%);
+    --slight-blue-white: hsl(220, 86%, 78%);
+    --light-gray: hsl(240, 2%, 13%);
+    --light-gray-70: hsl(240, 2%, 13%);
+    --eerie-black-1: hsl(240, 2%, 13%);
+    --accent-text: hsl(212, 92%, 45%);
+      }
+}
 
 
 
@@ -829,7 +852,7 @@ main {
 }
 
 .timeline-list span {
-  color: var(--dark-purpley-blue);
+  color: var(--accent-text);
   font-weight: var(--fw-400);
   line-height: 1.6;
 }
