@@ -153,8 +153,8 @@ input, textarea {
 }
 
 ::selection {
-  background: var(--white-1);
-  color: var(--white-background);
+  background: var(--slight-blue-white);
+  color: var(--eerie-black-1);
 }
 
 :focus { outline-color: var(--white-1); }
