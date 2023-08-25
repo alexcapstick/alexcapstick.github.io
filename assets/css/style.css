@@ -576,9 +576,6 @@ main {
   transition: color var(--transition-1);
 }
 
-.navbar-link:hover {
-  box-shadow: var(--shadow-2);
-}
 
 .navbar-link:focus {
   color: var(--white-1);
