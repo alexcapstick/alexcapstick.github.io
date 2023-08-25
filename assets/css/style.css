@@ -383,7 +383,7 @@ main {
 }
 
 .sidebar.active {
-  max-height: 405px;
+  max-height: fit-content;
 }
 
 .sidebar-info {
@@ -1526,7 +1526,7 @@ textarea.form-input::-webkit-resizer {
   }
 
   .sidebar.active {
-    max-height: 584px;
+    max-height: fit-content;
   }
 
 
@@ -1626,7 +1626,7 @@ textarea.form-input::-webkit-resizer {
   }
 
   .sidebar.active {
-    max-height: 584px;
+    max-height: fit-content;
 
   }
 
