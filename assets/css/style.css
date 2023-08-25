@@ -565,7 +565,7 @@ main {
 }
 
 .navbar-link {
-  color: var(--light-gray);
+  color: var(--white-1);
   font-size: var(--fs-5);
   padding: 20px 7px;
   transition: color var(--transition-1);
@@ -576,7 +576,7 @@ main {
 }
 
 .navbar-link:focus {
-  color: var(--light-gray-70);
+  color: var(--white-1);
   font-size: var(--fs-4);
   text-decoration: underline;
 }
@@ -1523,7 +1523,9 @@ textarea.form-input::-webkit-resizer {
   .info-content .title {
     margin: auto;
     box-shadow: var(--shadow-1);
+    font-size: var(--fs-8);
   }
+
 
   /**
    * #PORTFOLIO, BLOG 
@@ -1994,7 +1996,7 @@ textarea.form-input::-webkit-resizer {
   }
 
   .filter-item button {
-    color: var(--light-gray);
+    color: var(--white-1);
     font-size: var(--fs-15);
     transition: var(--transition-1);
     background-color: var(--dark-purpley-blue);
