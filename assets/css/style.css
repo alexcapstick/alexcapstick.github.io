@@ -470,6 +470,8 @@ main {
 .tags-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
   gap: 5px;
 }
 
@@ -491,8 +493,10 @@ main {
 .tags-item {
   min-width: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 5px;
+  font-size: var(--fs-8);
 }
 
 .contact-info {
@@ -1676,6 +1680,9 @@ textarea.form-input::-webkit-resizer {
 
   .tags-list {
     gap: 20px;
+    justify-items: center;
+    align-items: center;
+
   }
 
   .contact-info {
@@ -1943,6 +1950,8 @@ textarea.form-input::-webkit-resizer {
    */
   .tags-list {
     grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
     gap: 5px 5px;
   }
 
@@ -2313,6 +2322,8 @@ textarea.form-input::-webkit-resizer {
 
   .tags-list {
     grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
   }
 
   .contact-info :is(.contact-link) {
