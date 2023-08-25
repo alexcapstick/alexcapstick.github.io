@@ -565,6 +565,7 @@ main {
 }
 
 .navbar-link {
+  text-align: center;
   color: var(--white-1);
   font-size: var(--fs-5);
   padding: 20px 7px;
@@ -577,13 +578,11 @@ main {
 
 .navbar-link:focus {
   color: var(--white-1);
-  font-size: var(--fs-4);
-  text-decoration: underline;
+  font-size: var(--fs-3);
 }
 
 .navbar-link.active {
-  font-size: var(--fs-4);
-  text-decoration: underline;
+  font-size: var(--fs-3);
 }
 
 
@@ -1526,6 +1525,11 @@ textarea.form-input::-webkit-resizer {
     font-size: var(--fs-8);
   }
 
+  .sidebar.active {
+    max-height: 584px;
+  }
+
+
 
   /**
    * #PORTFOLIO, BLOG 
@@ -1623,6 +1627,7 @@ textarea.form-input::-webkit-resizer {
 
   .sidebar.active {
     max-height: 584px;
+
   }
 
   .sidebar-info {
@@ -2003,6 +2008,7 @@ textarea.form-input::-webkit-resizer {
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 10px;
+    font-size: var(--fs-4);
   }
 
   .filter-item button:hover {
