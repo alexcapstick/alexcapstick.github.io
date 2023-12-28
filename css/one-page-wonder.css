@@ -70,6 +70,18 @@ body {
 }
 
 
+button {
+	background-color: var(--nav-bar-color);
+	border: none;
+	color: white;
+	padding: 0.25em 0.25em;
+	margin: 0.25em 0.25em;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+}
+
+
 
 h1,
 .h1 {

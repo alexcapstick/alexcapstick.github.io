@@ -2057,6 +2057,28 @@ function updateThemeOnHtmlEl({ theme }) {
 }
 
 
+
+
+
+
+
+
+
+
+
+/**
+* Closes the navbar on click of an item.
+*/
+$('.navbar-collapse a').click(function () {
+  if (window.innerWidth < 767)
+    $('.navbar-collapse').collapse('hide');
+});
+
+
+
+
+
+
 /**
 * On page load:
 */
@@ -2110,11 +2132,134 @@ toggleSwitch2.addEventListener("change", (event) => {
 
 
 /**
-* Closes the navbar on click of an item.
+* Get bib file contents and display as HTML list
 */
-$('.navbar-collapse a').click(function () {
-  if (window.innerWidth < 767)
-    $('.navbar-collapse').collapse('hide');
-});
+function extractBibTeXFields(entry, field) {
+  const match = entry.match(new RegExp(field + '\\s*=\\s*\\{([^}]*)\\}', 'i'));
+  if (match) {
+    if (field === 'author') {
+      // split the author names on 'and' and when there is a comma in the name, swap the order of the names and remove the comma
+      var names = match[1].split(' and ').map(name => {
+        var [last, first] = name.split(',');
+        // if first is undefined then there was no comma in the name and we can just return the name
+        if (first === undefined) {
+          return last;
+        }
+        return `${first.trim()} ${last.trim()}`;
+      }
+      ).join(' and ');
+      // Replace 'and' occurrences with a semicolon (remove space before semicolon)
+      return names.replace(/\s+and\s+/g, ', ');
+    } else {
+      return match[1];
+    }
+  }
+  return '';
+}
 
+// Function to fetch and process the .bib file
+async function fetchBibTeXFile() {
+  try {
+    const response = await fetch('./assets/publications.bib'); // Replace 'references.bib' with your .bib file name
+    const data = await response.text();
+
+    // Split the .bib file into individual references
+    const references = data.split('@').filter(entry => entry.trim() !== '');
+
+    // Reverse the order of references
+    references.reverse();
+
+    // Create an HTML list of formatted references
+    const referencesList = document.getElementById('pubbib');
+
+    references.forEach(reference => {
+      const title = extractBibTeXFields(reference, 'title');
+      var author = extractBibTeXFields(reference, 'author');
+      const journal = extractBibTeXFields(reference, 'journal');
+      const year = extractBibTeXFields(reference, 'year');
+      const desc = extractBibTeXFields(reference, 'desc');
+      const url = extractBibTeXFields(reference, 'url');
+      const code = extractBibTeXFields(reference, 'code');
+
+      //console.log(title, author, journal, year)
+
+      const formattedTitle = `<h4 class="project-title">${title}</h4>`;
+      const formattedAuthor = `<p class="project-authors">${author}</p>`;
+      const formattedJournal = `<p class="project-destination">${journal}, ${year}</p>`;
+      const formattedDesc = `<p class="project-description">${desc}</p>`;
+      const formattedUrl = (url == '') ? '' : `<a class="project-link" href="${url}" target="_blank">Paper Link</a>`
+      const formattedCode = (code == '') ? '' : `<a class="project-link" href="${code}" target="_blank">Code Link</a>`
+
+      const formattedReference = formattedTitle + formattedAuthor + formattedJournal + formattedDesc + formattedUrl + ' ' + formattedCode;
+
+      const listItem = document.createElement('li');
+      listItem.innerHTML = formattedReference; // Use innerHTML to render HTML tags
+      referencesList.appendChild(listItem);
+    });
+  } catch (error) {
+    console.error('Error fetching or parsing the .bib file:', error);
+  }
+}
+
+
+
+let showMore = false;
+const itemsToShow = 10;
+let visibleItems = itemsToShow;
+
+
+
+// Function to show/hide additional list items
+function toggleListItems() {
+  const referencesList = document.getElementById('pubbib');
+  const listItems = referencesList.getElementsByTagName('li');
+
+  for (let i = 0; i < listItems.length; i++) {
+    if (i < visibleItems) {
+      console.log(listItems[i]);
+      listItems[i].style.display = 'list-item';
+    } else {
+      listItems[i].style.display = 'none';
+    }
+  }
+
+  const showMoreButton = document.getElementById('showMoreButton');
+  //showMoreButton.style.opacity = (visibleItems < listItems.length) ? 1 : 0.7;
+  showMoreButton.style.display = (visibleItems < listItems.length) ? 'block' : 'none';
+
+  const showLessButton = document.getElementById('showLessButton');
+  //showLessButton.style.opacity = (visibleItems > itemsToShow) ? 1 : 0.7;
+  showLessButton.style.display = (visibleItems > itemsToShow) ? 'block' : 'none';
+}
+
+// Function to handle show more button click
+function handleShowMoreClick() {
+  showMore = true;
+  visibleItems += itemsToShow;
+  toggleListItems();
+}
+
+// Function to handle show less button click
+function handleShowLessClick() {
+  showMore = false;
+  visibleItems = itemsToShow;
+  toggleListItems();
+}
+
+
+
+
+
+
+window.onload = async function () {
+  await fetchBibTeXFile();
+
+  const showMoreButton = document.getElementById('showMoreButton');
+  showMoreButton.addEventListener('click', handleShowMoreClick);
+
+  const showLessButton = document.getElementById('showLessButton');
+  showLessButton.addEventListener('click', handleShowLessClick);
+
+  toggleListItems();
+};
 
