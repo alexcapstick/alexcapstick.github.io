@@ -107,6 +107,43 @@
             margin-bottom: 1em;
             border-radius: 5px;
             background-color: var(--small-background-color);
+            color: white;
+        }
+
+        .premier-league {
+            background-color: rgb(58, 19, 78);
+        }
+
+        .fa-womens-super-league {
+            background-color: rgb(235, 85, 77);
+        }
+
+        .fa-womens-super-league-cup {
+            background-color: rgb(234, 164, 57);
+        }
+
+        .bundesliga {
+            background-color: rgb(163, 53, 48);
+        }
+
+        .efl-cup {
+            background-color: rgb(216, 57, 49);
+        }
+
+        .fa-cup {
+            background-color: rgb(159, 40, 49);
+        }
+
+        .champions-league {
+            background-color: rgb(28, 45, 85);
+        }
+
+        .uefa-europa-league {
+            background-color: rgb(27, 61, 127);
+        }
+
+        .world-cup {
+            background-color: rgb(126, 34, 57);
         }
     </style>
 
@@ -198,7 +235,7 @@
 
                             const competition = competition_kickoff_home_away[0];
                             const kickoff = competition_kickoff_home_away[1].split(' : ');
-                            const date = kickoff[0];
+                            var date = kickoff[0];
                             const time = kickoff[1];
                             const home = competition_kickoff_home_away[2];
                             const away = competition_kickoff_home_away[3];
@@ -212,6 +249,10 @@
                             console.log(dateObject, todayDate);
 
                             if (dateObject < todayDate) return;
+
+                            const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                            // make date the day and date
+                            date = weekday[dateObject.getDay()] + ' ' + date;
 
                             if (date !== currentDate) {
                                 currentDate = date;
@@ -243,6 +284,7 @@
                             const fixtureItem = document.createElement('li');
                             fixtureItem.innerHTML = `${competition}<br>${home} v ${away}`;
                             fixtureItem.classList.add('fixture_item');
+                            fixtureItem.classList.add(competition.toLowerCase().replace(/\s/g, '-'));
                             currentTimeLists[date][time].appendChild(fixtureItem);
 
                         });
