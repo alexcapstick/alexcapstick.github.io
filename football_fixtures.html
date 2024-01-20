@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Alex Capstick</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS for the 'One Page Wonder' Template -->
+    <link href="css/one-page-wonder.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --title-text-color: #ffffff;
+            --title-text-background-color: #19c116;
+            --title-background-color: #0a880e;
+            --little-title-text-color: #19c116;
+            --main-text-color: #002147;
+            --nav-bar-color: #19c116;
+            --nav-bar-brand-text-color: #19c116;
+            --nav-bar-brand-text-background-color: #ffffff;
+            --nav-bar-text-color: #ffffff;
+            --nav-bar-text-color-hover: #0a880e;
+            --small-background-color: #19c116;
+            --link-text-color: #00A5F6;
+            --font-family-titles: Sora;
+            --font-family-text: Arial;
+            --background-color: #ffffff;
+            --text-font-size: 18px;
+        }
+
+
+
+        [data-theme="dark"] {
+            --title-text-color: #ffffff;
+            --title-text-background-color: #19c116;
+            --title-background-color: #0a880e;
+            --little-title-text-color: #19c116;
+            --main-text-color: #ffffff;
+            --nav-bar-color: #222222;
+            --nav-bar-brand-text-color: #ffffff;
+            --nav-bar-brand-text-background-color: #0a880e;
+            --nav-bar-text-color: #ffffff;
+            --nav-bar-text-color-hover: #19c116;
+            --small-background-color: #19c116;
+            --link-text-color: #8FBEFF;
+            --font-family-titles: Sora;
+            --font-family-text: Arial;
+            --background-color: #333333;
+            --text-font-size: 18px;
+        }
+
+        .date_item {
+            font-weight: bold;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            margin-left: 0;
+            list-style-position: inside;
+            list-style: none;
+            font-size: 1.5em;
+        }
+
+        .time_list {
+            list-style-type: none;
+            padding-left: 0;
+            margin-left: 0;
+            justify-content: center;
+        }
+
+        .time_item {
+            font-weight: bold;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            margin-left: 0;
+            font-size: 1.25em;
+        }
+
+        .fixture_list {
+            display: flex;
+            flex-wrap: wrap;
+            list-style-type: none;
+            padding-left: 0;
+            margin-left: 0;
+            justify-content: center;
+        }
+
+        .fixture_item {
+            margin-left: 0.5em;
+            margin-right: 0.5em;
+            padding: 5px;
+            margin-bottom: 1em;
+            border-radius: 5px;
+            background-color: var(--small-background-color);
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">AC</a>
+                <div class="theme-button-phone">
+                    <label class="theme-switch">
+                        <input type="checkbox" id="checkbox1" />
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#fixtures">Fixtures</a></li>
+                </ul>
+                <div class="theme-button-computer">
+                    <label class="theme-switch">
+                        <input type="checkbox" id="checkbox2" />
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container -->
+
+    </nav>
+
+    <div class="header-image">
+
+        <div class="headline" id="top_page">
+            <div class="container">
+                <h1>Football Fixtures</h1>
+            </div>
+        </div>
+
+    </div><!-- /header-image -->
+
+    <div class="container">
+
+        <!-- START THE FEATURETTES -->
+
+        <hr class="featurette-divider" id="fixtures">
+        <div class="featurette">
+
+            <ul id="fixtures_list" class="fixtures_list"></ul>
+
+            </ul>
+
+            <script>
+                // Function to fetch and process the .csv file
+                async function fetchFixturesFile() {
+                    try {
+                        const response = await fetch('./assets/fixtures.csv');
+                        const data = await response.text();
+
+                        // Split the .csv file into individual references
+                        const games = data.split('\n').filter(entry => entry.trim() !== '');
+
+                        // Create a nested list of dates and times with fixtures
+                        const fixturesList = document.getElementById('fixtures_list');
+
+                        let currentDate = null;
+                        let currentDateItem = null;
+                        let currentTimeLists = {};
+
+                        // Create a table to display the references
+                        games.forEach((value, index) => {
+                            if (index < 1) return;
+                            const competition_kickoff_home_away = value.split(',');
+
+                            const competition = competition_kickoff_home_away[0];
+                            const kickoff = competition_kickoff_home_away[1].split(' : ');
+                            const date = kickoff[0];
+                            const time = kickoff[1];
+                            const home = competition_kickoff_home_away[2];
+                            const away = competition_kickoff_home_away[3];
+                            console.log(date, time, home, away);
+
+                            if (date !== currentDate) {
+                                currentDate = date;
+
+                                currentDateItem = document.createElement('li');
+                                currentDateItem.classList.add('date_item');
+                                currentDateItem.textContent = date;
+
+                                currentTimeLists[date] = document.createElement('ul');
+                                currentTimeLists[date].classList.add('time_list');
+
+                                currentDateItem.appendChild(currentTimeLists[date]);
+                                fixturesList.appendChild(currentDateItem);
+                            }
+
+                            if (!currentTimeLists[date][time]) {
+                                const currentTimeItem = document.createElement('li');
+                                currentTimeItem.classList.add('time_item');
+                                currentTimeItem.textContent = time;
+
+                                const fixtureList = document.createElement('ul');
+                                fixtureList.classList.add('fixture_list');
+
+                                currentTimeItem.appendChild(fixtureList);
+                                currentTimeLists[date][time] = fixtureList;
+                                currentTimeLists[date].appendChild(currentTimeItem);
+                            }
+
+                            const fixtureItem = document.createElement('li');
+                            fixtureItem.innerHTML = `${competition}<br>${home} v ${away}`;
+                            fixtureItem.classList.add('fixture_item');
+                            currentTimeLists[date][time].appendChild(fixtureItem);
+
+                        });
+                    } catch (error) {
+                        console.error('Error fetching or parsing the .csv file:', error);
+                    }
+                }
+                fetchFixturesFile()
+            </script>
+
+
+        </div>
+
+
+
+
+
+        <!-- /END THE FEATURETTES -->
+
+        <hr>
+
+        <!-- FOOTER -->
+        <footer>
+            <p class="foot-text">Thank you for reading</p>
+        </footer>
+        <!-- /END OF FOOTER -->
+
+    </div><!-- /container -->
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
