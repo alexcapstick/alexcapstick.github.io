@@ -39,8 +39,8 @@
 
         [data-theme="dark"] {
             --title-text-color: #ffffff;
-            --title-text-background-color: #19c116;
-            --title-background-color: #0a880e;
+            --title-text-background-color: #0a880e;
+            --title-background-color: #19c116;
             --little-title-text-color: #19c116;
             --main-text-color: #ffffff;
             --nav-bar-color: #222222;
@@ -56,21 +56,28 @@
             --text-font-size: 18px;
         }
 
+        .fixtures_list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            justify-content: center;
+        }
+
         .date_item {
             font-weight: bold;
             text-align: center;
             padding: 0;
             margin: 0;
-            margin-left: 0;
             list-style-position: inside;
             list-style: none;
             font-size: 1.5em;
+            padding-bottom: 2em;
         }
 
         .time_list {
             list-style-type: none;
-            padding-left: 0;
-            margin-left: 0;
+            padding: 0;
+            margin: 0;
             justify-content: center;
         }
 
@@ -79,16 +86,17 @@
             text-align: center;
             padding: 0;
             margin: 0;
-            margin-left: 0;
+            margin: 0;
             font-size: 1.25em;
+            padding-bottom: 1em;
         }
 
-        .fixture_list {
+        .game_list {
             display: flex;
             flex-wrap: wrap;
             list-style-type: none;
-            padding-left: 0;
-            margin-left: 0;
+            padding: 0;
+            margin: 0;
             justify-content: center;
         }
 
@@ -164,6 +172,9 @@
             </ul>
 
             <script>
+
+                const todayDate = new Date();
+
                 // Function to fetch and process the .csv file
                 async function fetchFixturesFile() {
                     try {
@@ -193,6 +204,15 @@
                             const away = competition_kickoff_home_away[3];
                             console.log(date, time, home, away);
 
+
+                            var dateParts = date.split("/");
+                            // month is 0-based, that's why we need dataParts[1] - 1
+                            var dateObject = new Date(+dateParts[2], dateParts[1] - 1, +dateParts[0]);
+
+                            console.log(dateObject, todayDate);
+
+                            if (dateObject < todayDate) return;
+
                             if (date !== currentDate) {
                                 currentDate = date;
 
@@ -213,7 +233,7 @@
                                 currentTimeItem.textContent = time;
 
                                 const fixtureList = document.createElement('ul');
-                                fixtureList.classList.add('fixture_list');
+                                fixtureList.classList.add('game_list');
 
                                 currentTimeItem.appendChild(fixtureList);
                                 currentTimeLists[date][time] = fixtureList;
