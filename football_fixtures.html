@@ -108,6 +108,7 @@
             border-radius: 5px;
             background-color: var(--small-background-color);
             color: white;
+            font-weight: normal;
         }
 
         .premier-league {
@@ -283,7 +284,7 @@
                             }
 
                             const fixtureItem = document.createElement('li');
-                            fixtureItem.innerHTML = `${competition}<br>${home} v ${away}`;
+                            fixtureItem.innerHTML = `<strong>${competition}</strong><br>${home} v ${away}`;
                             fixtureItem.classList.add('fixture_item');
                             fixtureItem.classList.add(competition.toLowerCase().replace(/\s/g, '-'));
                             currentTimeLists[date][time].appendChild(fixtureItem);
