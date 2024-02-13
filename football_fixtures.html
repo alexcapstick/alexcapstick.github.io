@@ -209,94 +209,6 @@
 
             </ul>
 
-            <script>
-
-                const todayDate = new Date();
-
-                // Function to fetch and process the .csv file
-                async function fetchFixturesFile() {
-                    try {
-                        const response = await fetch('./assets/fixtures.csv');
-                        const data = await response.text();
-
-                        // Split the .csv file into individual references
-                        const games = data.split('\n').filter(entry => entry.trim() !== '');
-
-                        // Create a nested list of dates and times with fixtures
-                        const fixturesList = document.getElementById('fixtures_list');
-
-                        let currentDate = null;
-                        let currentDateItem = null;
-                        let currentTimeLists = {};
-
-                        // Create a table to display the references
-                        games.forEach((value, index) => {
-                            if (index < 1) return;
-                            const competition_kickoff_home_away = value.split(',');
-
-                            const competition = competition_kickoff_home_away[0];
-                            const kickoff = competition_kickoff_home_away[1].split(' : ');
-                            var date = kickoff[0];
-                            const time = kickoff[1];
-                            const home = competition_kickoff_home_away[2];
-                            const away = competition_kickoff_home_away[3];
-                            console.log(date, time, home, away);
-
-
-                            var dateParts = date.split("/");
-                            // month is 0-based, that's why we need dataParts[1] - 1
-                            var dateObject = new Date(+dateParts[2], dateParts[1] - 1, +dateParts[0]);
-                            var yesterdayDate = todayDate.setDate(todayDate.getDate() - 1);
-
-                            console.log(dateObject, yesterdayDate);
-
-                            if (dateObject < yesterdayDate) return;
-
-                            const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-                            // make date the day and date
-                            date = weekday[dateObject.getDay()] + ' ' + date;
-
-                            if (date !== currentDate) {
-                                currentDate = date;
-
-                                currentDateItem = document.createElement('li');
-                                currentDateItem.classList.add('date_item');
-                                currentDateItem.textContent = date;
-
-                                currentTimeLists[date] = document.createElement('ul');
-                                currentTimeLists[date].classList.add('time_list');
-
-                                currentDateItem.appendChild(currentTimeLists[date]);
-                                fixturesList.appendChild(currentDateItem);
-                            }
-
-                            if (!currentTimeLists[date][time]) {
-                                const currentTimeItem = document.createElement('li');
-                                currentTimeItem.classList.add('time_item');
-                                currentTimeItem.textContent = time;
-
-                                const fixtureList = document.createElement('ul');
-                                fixtureList.classList.add('game_list');
-
-                                currentTimeItem.appendChild(fixtureList);
-                                currentTimeLists[date][time] = fixtureList;
-                                currentTimeLists[date].appendChild(currentTimeItem);
-                            }
-
-                            const fixtureItem = document.createElement('li');
-                            fixtureItem.innerHTML = `<strong>${competition}</strong><br>${home} v ${away}`;
-                            fixtureItem.classList.add('fixture_item');
-                            fixtureItem.classList.add(competition.toLowerCase().replace(/\s/g, '-'));
-                            currentTimeLists[date][time].appendChild(fixtureItem);
-
-                        });
-                    } catch (error) {
-                        console.error('Error fetching or parsing the .csv file:', error);
-                    }
-                }
-                fetchFixturesFile()
-            </script>
-
 
         </div>
 
@@ -322,6 +234,99 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
+    <script>
+
+
+
+        // Function to fetch and process the .csv file
+        async function fetchFixturesFile() {
+            try {
+                const response = await fetch('./assets/fixtures.csv');
+                const data = await response.text();
+                const yesterdayDate = new Date((new Date()).valueOf() - 1000 * 60 * 60 * 24);
+
+                // Split the .csv file into individual references
+                const games = data.split('\n').filter(entry => entry.trim() !== '');
+
+                // Create a nested list of dates and times with fixtures
+                const fixturesList = document.getElementById('fixtures_list');
+
+                let currentDate = null;
+                let currentDateItem = null;
+                let currentTimeLists = {};
+
+                // Create a table to display the references
+                games.forEach((value, index) => {
+                    if (index < 1) return;
+                    const competition_kickoff_home_away = value.split(',');
+
+                    const competition = competition_kickoff_home_away[0];
+                    const kickoff = competition_kickoff_home_away[1].split(' : ');
+                    var date = kickoff[0];
+                    const time = kickoff[1];
+                    const home = competition_kickoff_home_away[2];
+                    const away = competition_kickoff_home_away[3];
+
+
+                    var dateParts = date.split("/");
+                    // month is 0-based, that's why we need dataParts[1] - 1
+                    var dateObject = new Date(+dateParts[2], dateParts[1] - 1, +dateParts[0]);
+
+
+                    console.log(dateObject, yesterdayDate);
+
+                    // if the date is in the past, skip it
+                    if (dateObject < yesterdayDate) {
+                        return;
+                    }
+
+                    const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                    // make date the day and date
+                    date = weekday[dateObject.getDay()] + ' ' + date;
+
+                    if (date !== currentDate) {
+                        currentDate = date;
+
+                        currentDateItem = document.createElement('li');
+                        currentDateItem.classList.add('date_item');
+                        currentDateItem.textContent = date;
+
+                        currentTimeLists[date] = document.createElement('ul');
+                        currentTimeLists[date].classList.add('time_list');
+
+                        currentDateItem.appendChild(currentTimeLists[date]);
+                        fixturesList.appendChild(currentDateItem);
+                    }
+
+                    if (!currentTimeLists[date][time]) {
+                        const currentTimeItem = document.createElement('li');
+                        currentTimeItem.classList.add('time_item');
+                        currentTimeItem.textContent = time;
+
+                        const fixtureList = document.createElement('ul');
+                        fixtureList.classList.add('game_list');
+
+                        currentTimeItem.appendChild(fixtureList);
+                        currentTimeLists[date][time] = fixtureList;
+                        currentTimeLists[date].appendChild(currentTimeItem);
+                    }
+
+                    const fixtureItem = document.createElement('li');
+                    fixtureItem.innerHTML = `<strong>${competition}</strong><br>${home} v ${away}`;
+                    fixtureItem.classList.add('fixture_item');
+                    fixtureItem.classList.add(competition.toLowerCase().replace(/\s/g, '-'));
+                    currentTimeLists[date][time].appendChild(fixtureItem);
+
+                });
+            } catch (error) {
+                console.error('Error fetching or parsing the .csv file:', error);
+            }
+        }
+
+        // on page load, fetch the fixtures file
+        fetchFixturesFile();
+
+    </script>
 </body>
 
 </html>
