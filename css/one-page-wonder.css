@@ -40,7 +40,7 @@ body {
 
 .featurette-image.pull-left {
 	margin-right: 2.5%;
-	width: 150px;
+	width: 200px;
 	aspect-ratio: 1;
 }
 
@@ -304,6 +304,28 @@ footer {
 	.featurette-heading {
 		font-size: 20px;
 	}
+
+	.featurette-image {
+		max-width: 100%;
+	}
+
+
+	.featurette-image.pull-left {
+
+		margin-left: 25%;
+		margin-right: 25%;
+		margin-bottom: 5%;
+		margin-top: 5%;
+		width: 50%;
+		aspect-ratio: 1;
+
+	}
+
+	.featurette-image.pull-right {
+		margin-left: 0;
+		margin-bottom: 10px;
+	}
+
 
 }
 
