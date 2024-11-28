@@ -2186,7 +2186,7 @@ async function fetchBibTeXFile() {
       const formattedTitle = `<h4 class="project-title">${title}</h4>`;
       const formattedAuthor = `<p class="project-authors">${author}</p>`;
       const formattedJournal = `<p class="project-destination">${journal}, ${year}</p>`;
-      const formattedDesc = `<p class="project-description">${desc}</p>`;
+      const formattedDesc = `<p class="project-description"><em>${desc}</em></p>`;
       const formattedUrl = (url == '') ? '' : `<a class="project-link" href="${url}" target="_blank">Paper</a>`
       const formattedCode = (code == '') ? '' : `<a class="project-link" href="${code}" target="_blank">Code</a>`
 
