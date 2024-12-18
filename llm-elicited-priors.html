@@ -407,12 +407,15 @@
               never appeared in the LLM's training text.
             </p>
             <p>
-              However, for the Wine Quality prediction task, the LLM-elicited prior is too strict to allow
-              the model to learn from the data as the number of examples increases. In the case of Heart Disease
+              However, for the Hypothyroid prediction task, the LLM-elicited prior performs similarly for the low-data
+              regime but allows
+              the model to learn more from the data as the number of examples increases.
+              In the case of Heart Disease
               prediction, GPT-3.5-turbo returned an uninformative prior for most of the task descriptions, indicating
-              its lack of knowledge of the domain. This highlights the use of human experts in communication with the
+              its lack of knowledge of the domain. This suggests the use of human experts in communication with the
               LLM
-              to help steer the language model towards producing more informative prior distributions.
+              to help steer the language model towards producing more informative prior distributions when it
+              has little prior knowledge.
             </p>
           </div>
         </div>
@@ -432,12 +435,12 @@
               By additionally providing the language model with expert knowledge, we can guide the LLM to return more
               informative priors. This can be helpful when practitioners have access to a domain expert, but it is
               challenging for them to define the parameters of a prior distribution.
+            </p>
             <p>
               In the following figure, we use the synthetic task as an example. Here, we provide increasingly more
-              informative information about the task to the language model and observe the elicited prior distribution
-              change as we would expect. For each level of information, we describe to the language model how each
-              feature relates to the target using natural language.
-            </p>
+              informative information about the task to the language model and observe the expected changes in the
+              elicited prior distribution. For each level of information, we describe to the language model how an
+              additional feature relates to the target using natural language.
             </p>
           </div>
         </div>
@@ -494,7 +497,8 @@
         <div class="column is-four-fifths">
           <div class="content section-text section-box">
             <p>
-              The same can be done on the UTI task, where we provide additional information about the positive
+              The same can be done on the UTI task, where we are able to provide additional information about the
+              positive
               correlation between UTI risk and the bathroom frequency, night-time disturbances, and the number of
               previous UTIs.
             </p>
@@ -525,13 +529,12 @@
         <div class="column is-four-fifths">
           <div class="content section-text section-box">
             <p>
-              This figure shows how the language model updated its previously elicited prior for
-              the UTI task. As we can see, the LLM-elicited distributions already captured the positive correlation,
-              but our additional information resulted in prior distributions with a stronger correlation.
-              Further,
-              since the difference in prior distributions was small, this leads to only a small increase in the
+              This figure shows how the language model updated its previously elicited prior distribution for
+              the UTI task. As we can see, the LLM-elicited distributions already captured the correct correlation
+              direction, but our additional information resulted in prior distributions with a greater value.
+              Since the difference in prior distributions is small, this leads to only a small increase in the
               posterior accuracy. It does however demonstrate the combined use of experts and LLMs for prior
-              elicitation, since the language model can reliably convert the expert's natural language into prior
+              elicitation, since the language model reliably converts the expert's natural language into prior
               distributions.
             </p>
           </div>
@@ -613,7 +616,7 @@
             <p>
               Since we are using a language model's prior knowledge and updating it with a training dataset to make
               predictions, this method is a direct alternative to in-context learning for numerical predictive tasks.
-              The difference is that prior elicitation uses a marginal distribution and Bayesian inference to address
+              The difference being that prior elicitation uses a marginal distribution and Bayesian inference to address
               some of the shortfalls of in-context learning.
             </p>
           </div>
@@ -634,10 +637,11 @@
             <p>
               We present an approach for extracting the in-context prior distribution when the predictions mimic a
               linear model by sampling a maximum likelihood estimation (MLE) estimator. We construct a synthetic
-              dataset, and given a task description, as the language model to make predictions. We specify that the
+              dataset, and given a task description, ask the language model to make predictions. We specify that the
               in-context predictions must be made using a linear model. If the language model has used a linear model to
               make its regression or classification probability predictions, we can use MLE to sample from the
-              in-context model's prior and posterior distributions. From this we can construct sampling distributions.
+              in-context model's prior and posterior distributions. From this we can construct sampling
+              distributions of the parameters of the hidden in-context model.
             </p>
           </div>
         </div>
@@ -707,6 +711,12 @@
                 model
                 should be using to update its prior knowledge.
               </p>
+              <p>
+                We can see that our approximation of the internal posterior model is not as
+                accurate as the internal prior model. This is because
+                the LLM is inconsistently imitating a linear model as we instructed, likely because the prompt
+                significantly increases in size once we include data points as examples.
+              </p>
             </div>
           </div>
         </div>
@@ -742,7 +752,8 @@
 
       <section class="section hero ">
         <div class="container is-max-desktop">
-          <div><img class="figure" src="./llm-elicited-priors/static/images/prior_extraction_icl_pe_grid.png" />
+          <div><img class="figure"
+              src="./llm-elicited-priors/static/images/prior_extraction_icl_pe_grid_low_approx_error.png" />
             <h2 class="figure-caption has-text-centered">
               Histograms of the prior parameter samples approximated through MLE sampling of
               in-context predictions compared to those elicited from GPT-3.5-turbo.
@@ -778,7 +789,7 @@
       <section class="section hero ">
         <div class="container is-max-desktop">
           <div><img class="figure"
-              src="./llm-elicited-priors/static/images/mc_on_prior_vs_posterior_split_1_grid.png" />
+              src="./llm-elicited-priors/static/images/mc_on_prior_vs_posterior_split_1_grid_low_posterior_error.png" />
             <h2 class="figure-caption has-text-centered">
               Histograms of the posterior parameter samples approximated through MLE sampling of
               in-context predictions compared to those calculated through Monte Carlo sampling of the in-context prior
@@ -800,17 +811,18 @@
                   if the LLM is performing Bayesian inference in-context.
                 </p>
                 <p>
-                  Since we make an in-accurate approximation of the posterior distribution for the Breast Cancer
-                  prediction task, we will ignore it. However, for the other tasks our approximations for the prior and
-                  posterior
-                  in-context distributions are reliable.
+                  Since we make an in-accurate approximation of the posterior distribution for the Breast Cancer and
+                  Hypothyroid prediction tasks, we will ignore it.
+                  However, for the other tasks our approximations for the prior and posterior
+                  in-context distributions have low error.
                 </p>
                 <p>
-                  In the case of California Housing, the difference in the posterior distributions estimated through
+                  In the case of Heart Disease prediction, the difference in the posterior distributions estimated
+                  through
                   MLE sampling and using Monte Carlo methods differ significantly suggesting that the LLM is not
-                  approximating Bayesian inference for this task. On the other hand, for the Wine Quality and Heart
-                  Disease predictive tasks, both distributions are more similar, signifying that in these cases the
-                  language model is performing Bayesian inference.
+                  approximating Bayesian inference for this task. On the other hand, for the Diabetes predictive task,
+                  both distributions are more similar, signifying that in this case the
+                  language model is performing Bayesian inference in-context.
                 </p>
               </div>
             </div>
@@ -847,9 +859,9 @@
 
       <section class="section hero ">
         <div class="container is-max-desktop">
-          <div><img class="figure" src="./llm-elicited-priors/static/images/bayes_factor_grid.png" />
+          <div><img class="figure" src="./llm-elicited-priors/static/images/bayes_factor_grid_ll.png" />
             <h2 class="figure-caption has-text-centered">
-              The prior accuracy or MSE, and the prior marginal likelihood of in-context learning and prior elicitation
+              The prior marginal likelihood of in-context learning and prior elicitation
               predictions. The Bayes factor is also reported, where possible. This was calculated over 10 samples of 25
               data
               points.
