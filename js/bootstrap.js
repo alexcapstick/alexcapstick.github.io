@@ -2181,6 +2181,7 @@ async function fetchBibTeXFile() {
       const url = extractBibTeXFields(reference, 'url');
       const code = extractBibTeXFields(reference, 'code');
       const blog = extractBibTeXFields(reference, 'blog');
+      const interface = extractBibTeXFields(reference, 'interface');
 
       //console.log(title, author, journal, year)
 
@@ -2191,9 +2192,10 @@ async function fetchBibTeXFile() {
       const formattedUrl = (url == '') ? '' : `<a class="project-link" href="${url}" target="_blank">Paper</a>`
       const formattedCode = (code == '') ? '' : `<a class="project-link" href="${code}" target="_blank">Code</a>`
       const formattedBlog = (blog == '') ? '' : `<a class="project-link" href="${blog}" target="_blank">Summary</a>`
+      const formattedInterface = (interface == '') ? '' : `<a class="project-link" href="${interface}" target="_blank">Interface</a>`
 
 
-      const formattedReference = formattedTitle + formattedAuthor + formattedJournal + formattedDesc + formattedUrl + ' ' + formattedCode + ' ' + formattedBlog;
+      const formattedReference = formattedTitle + formattedAuthor + formattedJournal + formattedDesc + formattedUrl + formattedCode + formattedBlog + formattedInterface;
 
       const listItem = document.createElement('li');
       listItem.innerHTML = formattedReference; // Use innerHTML to render HTML tags
