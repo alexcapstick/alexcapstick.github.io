@@ -208,27 +208,20 @@
           <h2 class="section-title">Abstract</h2>
           <div class="content section-text section-box">
             <p>
-              Large language models (LLMs), trained on diverse data effectively acquire a
-              breadth of information across various domains. However, their computational
-              complexity, cost, and lack of transparency hinder their direct application for
-              specialised tasks. In fields such as clinical research, acquiring expert
-              annotations or prior knowledge about predictive models is often costly and
-              time-consuming. This study proposes the use of LLMs to elicit expert prior
-              distributions for predictive models. This approach also provides an alternative
-              to in-context learning, where language models are tasked with making
-              predictions directly. In this work, we compare LLM-elicited and uninformative
-              priors, evaluate whether LLMs truthfully generate parameter distributions, and
-              propose a model selection strategy for in-context learning and prior
-              elicitation. Our findings show that LLM-elicited prior parameter distributions
-              significantly reduce predictive error compared to uninformative priors in
-              low-data settings. Applied to clinical problems, this translates to fewer
-              required biological samples, lowering cost and resources. Prior elicitation
-              also consistently outperforms and proves more reliable than in-context learning
-              at a lower cost, making it a preferred alternative in our setting. We
-              demonstrate the utility of this method across various use cases, including
-              clinical applications. For infection prediction, using LLM-elicited priors
-              reduced the number of required labels to achieve the same accuracy as an
-              uninformative prior by 55%, 200 days earlier in the study.
+              Large language models (LLMs) acquire a breadth of information across various domains. However, their
+              computational complexity, cost, and lack of transparency often hinder their direct application for
+              predictive tasks where privacy and interpretability are paramount. In fields such as healthcare, biology,
+              and finance, specialised and interpretable linear models still hold considerable value. In such domains,
+              labelled data may be scarce or expensive to obtain. Well-specified prior distributions over model
+              parameters can reduce the sample complexity of learning through Bayesian inference; however, eliciting
+              expert priors can be time-consuming. We therefore introduce AutoElicit to extract knowledge from LLMs and
+              construct priors for predictive models. We show these priors are informative and can be refined using
+              natural language. We perform a careful study contrasting AutoElicit with in-context learning and
+              demonstrate how to perform model selection between the two methods. We find that AutoElicit yields priors
+              that can substantially reduce error over uninformative priors, using fewer labels, and consistently
+              outperform in-context learning. We show that AutoElicit saves over 6 months of labelling effort when
+              building a new predictive model for urinary tract infections from sensor recordings of people living with
+              dementia.
             </p>
           </div>
         </div>
@@ -387,7 +380,7 @@
       <div><img class="figure" src="./llm-elicited-priors/static/images/elicitation_results_lineplot.png" />
         <h2 class="figure-caption has-text-centered">
           Line plot of the accuracy and MSE of the posterior predictive distribution on a test set, using the
-          LLM-elicited prior (from GPT-3.5-turbo) and the uninformative prior.
+          LLM-elicited priors and the uninformative prior.
         </h2>
       </div>
     </div>
@@ -402,17 +395,22 @@
         <div class="column is-four-fifths">
           <div class="content section-text section-box">
             <p>
-              In almost all cases the LLM-elicited prior outperforms the uninformative prior in the low-data regime.
+              In almost all cases, one of the LLM-elicited priors outperforms the uninformative prior, particularly when
+              data is sparse.
               This is particularly interesting for the UTI prediction task, where the data is private and will have
               never appeared in the LLM's training text.
             </p>
             <p>
-              However, for the Hypothyroid prediction task, the LLM-elicited prior performs similarly for the low-data
+              For the Hypothyroid prediction task, the GPT-3.5-turbo-elicited prior performs similarly for the low-data
               regime but allows
               the model to learn more from the data as the number of examples increases.
+              In this case, DeepSeek-R1-32B-Q4 produces considerably more accurate posteriors.
+            </p>
+            <p>
               In the case of Heart Disease
               prediction, GPT-3.5-turbo returned an uninformative prior for most of the task descriptions, indicating
-              its lack of knowledge of the domain. This suggests the use of human experts in communication with the
+              its lack of knowledge of the domain.
+              This suggests the use of human experts in communication with the
               LLM
               to help steer the language model towards producing more informative prior distributions when it
               has little prior knowledge.
@@ -482,7 +480,8 @@
       <div><img class="figure" style="width: 75%;"
           src="./llm-elicited-priors/static/images/elicitation_varied_descriptions_prior_parameter_distribution.png" />
         <h2 class="figure-caption has-text-centered">
-          The change in the prior parameter distribution as the language model is provided with more information about
+          The change in the GPT-3.5-turbo prior parameter distribution as the language model is provided with more
+          information about
           the task.
         </h2>
       </div>
@@ -553,7 +552,7 @@
           <div class="content section-text section-box">
             <p>
               We can also evaluate the prior elicitation capabilities of other language models. Here, we compare
-              open-source LLMs and some of the other available OpenAI models to GPT-3.5-turbo:
+              open-source LLMs and some of the other available OpenAI models to those presented above:
             </p>
           </div>
         </div>
@@ -594,9 +593,10 @@
         <div class="column is-four-fifths">
           <div class="content section-text section-box">
             <p>
-              We mostly find that the open-source models provide priors with inconsistent posterior performance.
-              However, the GPT-4-turbo elicited priors achieve posterior accuracy and MSE that is often better than
-              GPT-3.5-turbo, but at a significantly higher cost.
+              We mostly find that the open-source models provide priors with inconsistent posterior performance. The
+              exception is
+              DeepSeek-R1-32B-Q4, which suggests that recent developments in reasoning methods are helpful for
+              eliciting priors.
             </p>
           </div>
         </div>
@@ -1046,8 +1046,8 @@
       <section class="section" id="BibTeX">
         <div class="container is-max-desktop content">
           <h2 class="section-title">BibTeX</h2>
-          <pre><code>@article{capstick2024using,
-  title={Using Large Language Models for Expert Prior Elicitation in Predictive Modelling},
+          <pre><code>@article{capstick2024autoelicit,
+  title={AutoElicit: Using Large Language Models for Expert Prior Elicitation in Predictive Modelling},
   author={Capstick, Alexander and Krishnan, Rahul G and Barnaghi, Payam},
   journal={arXiv preprint arXiv:2411.17284},
   year={2024}
