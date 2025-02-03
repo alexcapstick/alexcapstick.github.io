@@ -2182,6 +2182,8 @@ async function fetchBibTeXFile() {
       const code = extractBibTeXFields(reference, 'code');
       const blog = extractBibTeXFields(reference, 'blog');
       const interface = extractBibTeXFields(reference, 'interface');
+      const python_package = extractBibTeXFields(reference, 'python_package');
+      
 
       //console.log(title, author, journal, year)
 
@@ -2189,13 +2191,14 @@ async function fetchBibTeXFile() {
       const formattedAuthor = `<p class="project-authors">${author}</p>`;
       const formattedJournal = `<p class="project-destination">${journal}, ${year}</p>`;
       const formattedDesc = `<p class="project-description"><em>${desc}</em></p>`;
-      const formattedUrl = (url == '') ? '' : `<a class="project-link" href="${url}" target="_blank">Paper</a>`
-      const formattedCode = (code == '') ? '' : `<a class="project-link" href="${code}" target="_blank">Code</a>`
-      const formattedBlog = (blog == '') ? '' : `<a class="project-link" href="${blog}" target="_blank">Summary</a>`
-      const formattedInterface = (interface == '') ? '' : `<a class="project-link" href="${interface}" target="_blank">Interface</a>`
+      const formattedUrl = (url == '') ? '' : `<a class="project-link" href="${url}" target="_blank">(Paper)</a>`
+      const formattedCode = (code == '') ? '' : `<a class="project-link" href="${code}" target="_blank">(Code)</a>`
+      const formattedBlog = (blog == '') ? '' : `<a class="project-link" href="${blog}" target="_blank">(Summary)</a>`
+      const formattedInterface = (interface == '') ? '' : `<a class="project-link" href="${interface}" target="_blank">(Interface)</a>`
+      const formattedPythonPackage = (python_package == '') ? '' : `<a class="project-link" href="${python_package}" target="_blank">(Python Package)</a>`
 
 
-      const formattedReference = formattedTitle + formattedAuthor + formattedJournal + formattedDesc + formattedUrl + formattedCode + formattedBlog + formattedInterface;
+      const formattedReference = formattedTitle + formattedAuthor + formattedJournal + formattedDesc + formattedUrl + formattedCode + formattedPythonPackage + formattedBlog + formattedInterface;
 
       const listItem = document.createElement('li');
       listItem.innerHTML = formattedReference; // Use innerHTML to render HTML tags
