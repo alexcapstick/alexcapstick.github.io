@@ -98,6 +98,13 @@ body {
   margin: 1% 2%;
 }
 
+.journal-name {
+  font-weight: bold;
+  vertical-align: top;
+  align-items: center;
+  padding: 2%;
+}
+
 .author-name-text {
   font-size: 1rem;
 }
