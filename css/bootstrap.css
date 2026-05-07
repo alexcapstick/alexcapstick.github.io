@@ -26,7 +26,7 @@
   --text-font-size: 18px;
 }
 
-[data-theme="dark"] {
+/* [data-theme="dark"] {
   --title-text-color: #ffffff;
   --title-text-background-color: #096CDC;
   --title-background-color: #0049B2;
@@ -42,7 +42,7 @@
   --font-family-text: Arial;
   --background-color: #333333;
   --text-font-size: 18px;
-}
+} */
 
 
 article,
@@ -313,7 +313,7 @@ table {
   width: 100%;
   border-radius: 16px;
   margin-bottom: 30px;
-  border: 1px solid var(--dark-purpley-blue);
+  border: 1px solid #ddd;
   overflow: hidden;
 }
 
@@ -551,7 +551,7 @@ img {
 }
 
 .img-circle {
-  border-radius: 25%;
+  border-radius: 5%;
 }
 
 hr {

@@ -28,12 +28,12 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="#">AC</a>
-        <div class="theme-button-phone">
+        <!-- <div class="theme-button-phone">
           <label class="theme-switch">
             <input type="checkbox" id="checkbox1" />
             <div class="slider round"></div>
           </label>
-        </div>
+        </div> -->
 
       </div>
 
@@ -47,12 +47,12 @@
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="theme-button-computer">
+        <!-- <div class="theme-button-computer">
           <label class="theme-switch">
             <input type="checkbox" id="checkbox2" />
             <div class="slider round"></div>
           </label>
-        </div>
+        </div> -->
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container -->
 
@@ -77,15 +77,13 @@
       <h3 class="featurette-heading">About Me</h3>
       <img class="featurette-image img-circle img-responsive pull-left" src="./assets/alex_capstick.jpeg">
       <p>
-        I recently finished my PhD at Imperial College London studying the use of machine learning methods for 
-        remote healthcare monitoring in dementia care. 
+        I recently finished my PhD at Imperial College London, where I focused on building trusted and reliable machine learning methods for 
+        remote healthcare monitoring. 
         I studied as part of the <a href="https://tmi-lab.github.io/" target="_blank">Translational Machine Intelligence Lab</a>,
         supervised by <a href="https://profiles.imperial.ac.uk/p.barnaghi" target="_blank">Payam Barnaghi</a>.
-        Before my doctoral research, I studied BSc Mathematics at UCL and MSc Applied Mathematics at Imperial. 
-      </p>
-
-      <p>
-        I am interested in machine learning and its application to healthcare.
+        Before my doctoral research, I studied BSc Mathematics at UCL and MSc 
+        Applied Mathematics at Imperial, which were formative for my approach 
+        to machine learning research. 
       </p>
 
     </div>
@@ -96,10 +94,11 @@
 
     <div class="featurette">
       <h3 class="featurette-heading">My Interests</h3>
-      <h4>I am interested in all things ML and Maths, but specifically:</h4>
+      <h4>I am interested in all things machine learning and maths, but specifically:</h4>
       <p>
       <ul>
-        <li> Applications of machine learning in science or health </li>
+        <li> Machine learning for good </li>
+        <li> Developing methods to ensure the reliable and safe use of machine learning systems </li>
         <li> The use of pretrained models and LLMs in healthcare </li>
         <li> Applications of machine learning for drug discovery </li>
         <li> Predicting clinical events from time-series data </li>
@@ -146,25 +145,28 @@
           <h4 class="timeline-item-title">Imperial College London, 2021 — 2025</h4>
           <h5 class="timeline-item-role">PhD, Machine learning applied to healthcare</h5>
           <p class="timeline-item-text">
-            Developing machine learning techniques to improve Dementia care through the use
-            of in-home sensors.
+            Researched the safe applications of LLMs to healthcare, representation learning of health 
+            data using self-supervised learning, predicting adverse health conditions using multimodal models, 
+            and learning from unreliable data.
           </p>
         </li>
 
 
         <li class="timeline-item">
-          <h4 class="timeline-item-title">University of Toronto, 2024</h4>
+          <h4 class="timeline-item-title">Vector Institute, University of Toronto, 2024</h4>
           <h5 class="timeline-item-role">
             3-month Study Placement, Machine Learning and Computational Healthcare
           </h5>
           <p class="timeline-item-text">
             Supervised by
             <a href="https://www.cs.toronto.edu/~rahulgk/" target="_blank">Rahul Krishnan</a>:
-            Studying the use of language models
-            in building probabilistic predictive models.
+            We developed AutoElicit, a method for extracting expert knowledge from LLMs as 
+            structured priors for Bayesian learning of predictive tasks, with and without 
+            collaboration with clinicians. This included an evaluation of priors across a 
+            range of LLM capacities and providers.
           </p>
           <p>
-            This was funded through the Turing Global Fellows Fund.
+            This was funded through the Turing Global Fellows Award 2024.
           </p>
         </li>
 
@@ -200,7 +202,15 @@
       <ul class="timeline-list">
 
         <li class="timeline-item">
-          <h4 class="timeline-item-title">Imperial College London, London, 2022 — Current </h4>
+          <h4 class="timeline-item-title">Biotech Startup, London, 2024 — Current </h4>
+          <h5 class="timeline-item-role">Machine Learning Specialist</h5>
+          <p class="timeline-item-text">
+            Immersed in an interdisciplinary feedback loop to drive scientific discovery.
+          </p>
+        </li>
+
+        <li class="timeline-item">
+          <h4 class="timeline-item-title">Imperial College London, London, 2022 — 2025 </h4>
           <h5 class="timeline-item-role">Teaching Assistant for Machine Learning for Neuroscience</h5>
           <p class="timeline-item-text">
             Prepare and present materials, instruct in labs, give tutorials on Pytorch, and mark coursework
@@ -220,8 +230,7 @@
           <h4 class="timeline-item-title">Investec, London, 2019 — 2020</h4>
           <h5 class="timeline-item-role">Data and Analytics Graduate</h5>
           <p class="timeline-item-text">
-            Part of the data and analytics graduate program, I gained experience
-            in the data science, analytics, machine learning, and risk management teams.
+            Built pipelines to perform natural language processing tasks with PyTorch.
           </p>
         </li>
 
@@ -236,7 +245,7 @@
 
     <div class="featurette">
       <h3 class="featurette-heading">Projects</h3>
-      <h4>The following are some public projects I am working on:</h4>
+      <h4>The following are some public projects I have worked on:</h4>
 
       <ul class="" project-list>
 
@@ -248,10 +257,8 @@
           <p class="project-description">
             This is a python module that was developed based on the work "AutoElicit: Using Large Language Models 
             for Expert Prior Elicitation in Predictive Modelling".
-          </p>
-          <p class="project-description">
             The module provides a framework for using large language models (LLMs) to elicit expert knowledge 
-            in predictive modeling tasks. It includes tools for generating prior distributions.
+            in predictive modeling tasks.
         </li>
 
 
@@ -260,19 +267,17 @@
             <h4 class="project-item">Machine Learning for Neuroscience Module</h4>
           </a>
           <p class="project-description">
-            This is a module I am a assistant teacher for at Imperial College London for the MSc
+            I was a teaching assistant at Imperial College London for the MSc
             Computational Neuroscience.
+            This module introduces students to the application of machine learning techniques in neuroscience. 
+            It covers topics such as neural data analysis, predictive modeling, and the use of deep learning 
+            frameworks like PyTorch. The course website provides additional resources and materials for students.
           </p>
-            <p class="project-description">
-              This module introduces students to the application of machine learning techniques in neuroscience. 
-              It covers topics such as neural data analysis, predictive modeling, and the use of deep learning 
-              frameworks like PyTorch. The course website provides additional resources and materials for students.
-            </p>
         </li>
 
 
         <li>
-          <a href="https://alexs-visualisation-tools.readthedocs.io/en/latest/" target="_blank">
+          <a href="https://alexs-visualisation-tools.readthedocs.io/en/latest/documentation.html" target="_blank">
             <h4 class="project-item">AVT Python Package</h4>
           </a>
           <p class="project-description">
@@ -383,14 +388,6 @@
 
       </ul>
 
-
-      <section class="mapbox" data-mapbox>
-        <figure>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3535544.767114379!2d-6.729906278530523!3d54.426101536300166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876110149812b73%3A0x6048621cfb84b49e!2sImperial%20College%20London%20White%20City%20Campus!5e0!3m2!1sen!2suk!4v1655638185068!5m2!1sen!2suk"
-            width="400" height="300"></iframe>
-        </figure>
-      </section>
     </div>
 
 
