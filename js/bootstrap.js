@@ -2029,32 +2029,32 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 * Fall back to system setting.
 * Fall back to light mode.
 */
-function calculateSettingAsThemeString({ localStorageTheme, systemSettingDark }) {
-  if (localStorageTheme !== null) {
-    return localStorageTheme;
-  }
+// function calculateSettingAsThemeString({ localStorageTheme, systemSettingDark }) {
+//   if (localStorageTheme !== null) {
+//     return localStorageTheme;
+//   }
 
-  if (systemSettingDark.matches) {
-    return "dark";
-  }
+//   if (systemSettingDark.matches) {
+//     return "dark";
+//   }
 
-  return "light";
-}
+//   return "light";
+// }
 
-/**
-* Utility function to update the button text and aria-label.
-*/
-function updateButton({ toggleSwitch, isDark }) {
-  const newChecked = isDark ? true : false;
-  toggleSwitch.checked = newChecked;
-}
+// /**
+// * Utility function to update the button text and aria-label.
+// */
+// function updateButton({ toggleSwitch, isDark }) {
+//   const newChecked = isDark ? true : false;
+//   toggleSwitch.checked = newChecked;
+// }
 
-/**
-* Utility function to update the theme setting on the html tag
-*/
-function updateThemeOnHtmlEl({ theme }) {
-  document.querySelector("html").setAttribute("data-theme", theme);
-}
+// /**
+// * Utility function to update the theme setting on the html tag
+// */
+// function updateThemeOnHtmlEl({ theme }) {
+//   document.querySelector("html").setAttribute("data-theme", theme);
+// }
 
 
 
@@ -2086,48 +2086,50 @@ $('.navbar-collapse a').click(function () {
 /**
 * 1. Grab what we need from the DOM and system settings on page load
 */
-const toggleSwitch1 = document.getElementById('checkbox1');
-const toggleSwitch2 = document.getElementById('checkbox2');
-
-const localStorageTheme = localStorage.getItem("theme");
-const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
-
-/**
-* 2. Work out the current site settings
-*/
-let currentThemeSetting = calculateSettingAsThemeString({ localStorageTheme, systemSettingDark });
-
-/**
-* 3. Update the theme setting and button text accoridng to current settings
-*/
-updateButton({ toggleSwitch: toggleSwitch1, isDark: currentThemeSetting === "dark" });
-updateButton({ toggleSwitch: toggleSwitch2, isDark: currentThemeSetting === "dark" });
-updateThemeOnHtmlEl({ theme: currentThemeSetting });
-
-/**
-* 4. Add an event listener to toggle the theme
-*/
-toggleSwitch1.addEventListener("change", (event) => {
-  const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
-
-  localStorage.setItem("theme", newTheme);
-  updateButton({ toggleSwitch: toggleSwitch1, isDark: newTheme === "dark" });
-  updateThemeOnHtmlEl({ theme: newTheme });
-
-  currentThemeSetting = newTheme;
-});
-
-toggleSwitch2.addEventListener("change", (event) => {
-  const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
-
-  localStorage.setItem("theme", newTheme);
-  updateButton({ toggleSwitch: toggleSwitch2, isDark: newTheme === "dark" });
-  updateThemeOnHtmlEl({ theme: newTheme });
-
-  currentThemeSetting = newTheme;
-});
 
 
+// const toggleSwitch1 = document.getElementById('checkbox1');
+// const toggleSwitch2 = document.getElementById('checkbox2');
+
+// const localStorageTheme = localStorage.getItem("theme");
+// const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+// /**
+// * 2. Work out the current site settings
+// */
+// let currentThemeSetting = calculateSettingAsThemeString({ localStorageTheme, systemSettingDark });
+
+// /**
+// * 3. Update the theme setting and button text accoridng to current settings
+// */
+// updateButton({ toggleSwitch: toggleSwitch1, isDark: currentThemeSetting === "dark" });
+// updateButton({ toggleSwitch: toggleSwitch2, isDark: currentThemeSetting === "dark" });
+// updateThemeOnHtmlEl({ theme: currentThemeSetting });
+
+// /**
+// * 4. Add an event listener to toggle the theme
+// */
+// toggleSwitch1.addEventListener("change", (event) => {
+//   const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
+
+//   localStorage.setItem("theme", newTheme);
+//   updateButton({ toggleSwitch: toggleSwitch1, isDark: newTheme === "dark" });
+//   updateThemeOnHtmlEl({ theme: newTheme });
+
+//   currentThemeSetting = newTheme;
+// });
+
+// toggleSwitch2.addEventListener("change", (event) => {
+//   const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
+
+//   localStorage.setItem("theme", newTheme);
+//   updateButton({ toggleSwitch: toggleSwitch2, isDark: newTheme === "dark" });
+//   updateThemeOnHtmlEl({ theme: newTheme });
+
+//   currentThemeSetting = newTheme;
+// });
+
+currentThemeSetting = "light";
 
 
 
