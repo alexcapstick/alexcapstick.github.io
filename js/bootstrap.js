@@ -2214,7 +2214,7 @@ async function fetchBibTeXFile() {
 
 
 let showMore = false;
-const itemsToShow = 10;
+const itemsToShow = 5;
 let visibleItems = itemsToShow;
 
 
